@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5280b1c4-d768-4286-99fb-a940461568b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Window.py" beforeDir="false" afterPath="$PROJECT_DIR$/employeeView.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +32,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="Window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.mainWindow (1)">
+    <configuration name="employeeView" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ticketSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -44,7 +45,91 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Window.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/employeeView.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="helperFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ticketSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helperFunctions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ticketSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mainWindow (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ticketSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mainWindow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ticketSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -55,7 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Window" />
+        <item itemvalue="Python.mainWindow (1)" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.mainWindow" />
+        <item itemvalue="Python.helperFunctions" />
+        <item itemvalue="Python.employeeView" />
       </list>
     </recent_temporary>
   </component>
@@ -73,21 +162,33 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1339" height="179" key="GridCell.Tab.0.bottom" timestamp="1620866135468">
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1621011787946">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1339" height="179" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1620866135468" />
-    <state width="1339" height="179" key="GridCell.Tab.0.center" timestamp="1620866135468">
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621011787946" />
+    <state width="1339" height="143" key="GridCell.Tab.0.bottom" timestamp="1621015873418">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1339" height="179" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1620866135468" />
-    <state width="1339" height="179" key="GridCell.Tab.0.left" timestamp="1620866135467">
+    <state width="1579" height="179" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
+    <state width="1339" height="143" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
+    <state width="1339" height="143" key="GridCell.Tab.0.center" timestamp="1621015873418">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1339" height="179" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1620866135467" />
-    <state width="1339" height="179" key="GridCell.Tab.0.right" timestamp="1620866135468">
+    <state width="1579" height="179" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
+    <state width="1339" height="143" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
+    <state width="1339" height="143" key="GridCell.Tab.0.left" timestamp="1621015873418">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1339" height="179" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1620866135468" />
+    <state width="1579" height="179" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
+    <state width="1339" height="143" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
+    <state width="1339" height="143" key="GridCell.Tab.0.right" timestamp="1621015873418">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1579" height="179" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
+    <state width="1339" height="143" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
+    <state x="376" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1621009488739">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="376" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621009488739" />
   </component>
 </project>
