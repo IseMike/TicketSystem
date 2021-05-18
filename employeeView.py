@@ -1,11 +1,17 @@
 import tkinter as tk
+from databaseManager import *
 
 
-def store_db(name_entry, window, canvas):
+def store_db(name_entry, subject_entry, desc_entry, window, canvas):
     x1 = name_entry.get()
-    l1 = tk.Label(window, text="Thank you, " + x1 + " ,an administrator will be with you shortly.\n"
+    x2 = subject_entry.get()
+    x3 = desc_entry.get("1.0", 'end-1c')
+    l1 = tk.Label(window, text="Thank you, " + x1 + ", an administrator will be with you shortly.\n"
                                                     "You may now close the application.")
+    print(x1 + "\n" + x2 + "\n" + x3)
     canvas.create_window(200, 265, window=l1)
+    insert_into_issues(x1, x2, x3)
+    close_database()
 
 
 def open_employee_view():
@@ -35,7 +41,8 @@ def open_employee_view():
     descEntry = tk.Text(window, height=5, width=40)
     canvas.create_window(238, 190, window=descEntry)
 
-    button1 = tk.Button(window, text='Send', command=lambda: store_db(nameEntry, window, canvas))
+    button1 = tk.Button(window, text='Send', command=lambda: store_db(nameEntry, subjectEntry,
+                                                                      descEntry, window, canvas))
     canvas.create_window(200, 300, window=button1)
 
     window.mainloop()

@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5280b1c4-d768-4286-99fb-a940461568b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mainWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/databaseManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketsystem.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Window.py" beforeDir="false" afterPath="$PROJECT_DIR$/employeeView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employeeView.py" beforeDir="false" afterPath="$PROJECT_DIR$/employeeView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainWindow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,18 +27,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1sSRQ16lNJD4brVx3QixikDpIaD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Python.mainWindow (1)">
-    <configuration name="employeeView" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.mainWindow (2)">
+    <configuration name="databaseManager (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ticketSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -45,7 +54,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/employeeView.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/databaseManager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -54,7 +63,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="helperFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="databaseManager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ticketSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,11 +71,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helperFunctions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/databaseManager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mainWindow (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ticketSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mainWindow (2)" />
+        <item itemvalue="Python.databaseManager (1)" />
+        <item itemvalue="Python.databaseManager" />
         <item itemvalue="Python.mainWindow (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.mainWindow" />
-        <item itemvalue="Python.helperFunctions" />
-        <item itemvalue="Python.employeeView" />
       </list>
     </recent_temporary>
   </component>
@@ -161,34 +170,49 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1621011787946">
+    <state x="423" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1621356111102">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621011787946" />
-    <state width="1339" height="143" key="GridCell.Tab.0.bottom" timestamp="1621015873418">
+    <state x="423" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621356111102" />
+    <state x="210" y="19" key="DBNavigator.ProjectSettingsDialog" timestamp="1621355965430">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1579" height="179" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
-    <state width="1339" height="143" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
-    <state width="1339" height="143" key="GridCell.Tab.0.center" timestamp="1621015873418">
+    <state x="210" y="19" key="DBNavigator.ProjectSettingsDialog/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621355965430" />
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1621355152474">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1579" height="179" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
-    <state width="1339" height="143" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
-    <state width="1339" height="143" key="GridCell.Tab.0.left" timestamp="1621015873418">
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621355152474" />
+    <state width="1339" height="178" key="GridCell.Tab.0.bottom" timestamp="1621361436995">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1579" height="179" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
-    <state width="1339" height="143" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
-    <state width="1339" height="143" key="GridCell.Tab.0.right" timestamp="1621015873418">
+    <state width="1579" height="178" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1621361221581" />
+    <state width="1339" height="178" key="GridCell.Tab.0.bottom/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621361436995" />
+    <state width="1339" height="178" key="GridCell.Tab.0.center" timestamp="1621361436995">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1579" height="179" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1620928795296" />
-    <state width="1339" height="143" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621015873418" />
-    <state x="376" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1621009488739">
+    <state width="1579" height="178" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1621361221581" />
+    <state width="1339" height="178" key="GridCell.Tab.0.center/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621361436995" />
+    <state width="1339" height="178" key="GridCell.Tab.0.left" timestamp="1621361436995">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="376" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621009488739" />
+    <state width="1579" height="178" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1621361221581" />
+    <state width="1339" height="178" key="GridCell.Tab.0.left/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621361436995" />
+    <state width="1339" height="178" key="GridCell.Tab.0.right" timestamp="1621361436995">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1579" height="178" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@-1600.-137.1600.860" timestamp="1621361221581" />
+    <state width="1339" height="178" key="GridCell.Tab.0.right/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621361436995" />
+    <state x="181" y="6" key="SettingsEditor" timestamp="1621355797002">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="181" y="6" key="SettingsEditor/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621355797002" />
+    <state x="376" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1621355819325">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="376" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728/-1600.-137.1600.860@0.0.1360.728" timestamp="1621355819325" />
   </component>
 </project>
