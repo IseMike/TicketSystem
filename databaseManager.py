@@ -5,6 +5,7 @@ conn = sqlite3.connect(databaseName)
 print("Opened database successfully")
 
 issueNumber = 0
+cur = conn.cursor()
 
 
 def initialize_issue_number():
@@ -19,8 +20,6 @@ def create_tables():
                                  UNIQUE
                                  NOT NULL,
         EmployeeName     STRING  NOT NULL,
-        EmployeePassword STRING  UNIQUE
-                                 NOT NULL,
         Admin            BOOLEAN NOT NULL,
         Tech             BOOLEAN NOT NULL
     );''')
@@ -43,17 +42,62 @@ def create_tables():
     print("Table Issues created successfully")
 
 
+def is_employee(employeeID):
+    ID = str(employeeID)
+    cur.execute('''SELECT * FROM Employees
+                    WHERE EmployeeID=?''', (ID,))
+    if cur.fetchone():
+        return True
+    else:
+        return False
+
+
+def is_admin(employeeID):
+    ID = str(employeeID)
+    cur.execute('''SELECT * FROM Employees
+                WHERE EmployeeID=?
+                AND Admin=1''', (ID,))
+    if cur.fetchone():
+        return True
+    else:
+        return False
+
+
+def is_tech(employeeID):
+    ID = str(employeeID)
+    cur.execute('''SELECT * FROM Employees
+                WHERE EmployeeID=?
+                AND Tech=1''', (ID,))
+    if cur.fetchone():
+        return True
+    else:
+        return False
+
+
+def insert_into_employees(employeeID, employeeName, admin, tech):
+    sql = '''INSERT INTO Employees (EmployeeID, EmployeeName, Admin, Tech)
+                    Values (?, ?, ?, ?)'''
+    package = (employeeID, employeeName, admin, tech)
+    cur.execute(sql, package)
+    conn.commit()
+    if admin:
+        print("Inserted Admin into employee table")
+    if tech:
+        print("Inserted Tech into employee table")
+    if not tech and not admin:
+        print("Inserted Employee into employee table")
+
+
 def insert_into_issues(name, subject, description):
     global issueNumber
-    sql = '''INSERT INTO Issues (Name,Subject, Description, IssueID)
+    sql = '''INSERT INTO Issues (Name, Subject, Description, IssueID)
                  VALUES (?, ?, ?, ?) '''
-    cur = conn.cursor()
     package = (name, subject, description, issueNumber)
     issueNumber += 1
     print(issueNumber)
     cur.execute(sql, package)
     conn.commit()
-    print("Inserted issue into issues database.")
+    print("Inserted issue into issue table.")
 
 
 def close_database():
