@@ -1,9 +1,13 @@
 from employeeView import *
+from adminView import *
 import os.path
 
 file_path = 'ticketsystem.db'
 
 
+# This function opens a new window depending on whether the employee is
+# an Admin, a Tech or a normal employee.
+# It will pop up an error message if the ID is not in the employee table.
 def open_new_window(ID):
     print(ID)
     admin = False
@@ -13,6 +17,7 @@ def open_new_window(ID):
         admin = True
         mainWindow.destroy()
         print("This is an Admin")
+        open_admin_view()
     if is_tech(ID):
         tech = True
         mainWindow.destroy()
@@ -29,6 +34,7 @@ def open_new_window(ID):
         canvas.create_window(200, 265, window=l1)
 
 
+# This function populates the employee table for testing.
 def test():
     insert_into_employees(123456, "Isaac", True, False)
     insert_into_employees(234567, "Micah", False, True)
@@ -51,7 +57,6 @@ if __name__ == '__main__':
     else:
         print("Database exists and has tables in it")
         from databaseManager import *
-
     mainWindow = tk.Tk()
     mainWindow.title(" Ticket System Application ")
     mainWindow.geometry("600x400")
@@ -59,15 +64,10 @@ if __name__ == '__main__':
     canvas = tk.Canvas(mainWindow, width=400, height=300)
     canvas.pack()
 
-    storeLabel = tk.Label(mainWindow, text='Store ID: ')
-    canvas.create_window(162, 75, window=storeLabel)
-    storeEntry = tk.Entry(mainWindow)
-    canvas.create_window(250, 75, window=storeEntry)
-
     employeeLabel = tk.Label(mainWindow, text='Employee ID: ')
-    canvas.create_window(150, 100, window=employeeLabel)
+    canvas.create_window(145, 75, window=employeeLabel)
     idEntry = tk.Entry(mainWindow)
-    canvas.create_window(250, 100, window=idEntry)
+    canvas.create_window(250, 75, window=idEntry)
 
     button1 = tk.Button(mainWindow, text='Continue', command=lambda: open_new_window(idEntry.get()))
     canvas.create_window(200, 300, window=button1)

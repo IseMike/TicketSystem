@@ -2,6 +2,7 @@ import tkinter as tk
 from databaseManager import *
 
 
+# This stores the Issue that the employee writes into the Issue table.
 def store_db(name_entry, subject_entry, desc_entry, window, canvas):
     x1 = name_entry.get()
     x2 = subject_entry.get()
@@ -14,6 +15,8 @@ def store_db(name_entry, subject_entry, desc_entry, window, canvas):
     close_database()
 
 
+# This opens the employee view.
+# Here an employee can report any issues to the Admin.
 def open_employee_view():
     window = tk.Tk()
     window.title(" Ticket System Application ")
