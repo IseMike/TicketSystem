@@ -18,9 +18,25 @@ def open_helper(admin, issue, employee, window):
         open_employee_table()
 
 
+# Helper function for buttons who need to insert new information into the database
+# and open a new window
 def insert_and_open(employeeID, name, admin, tech, window):
     insert_into_employees(employeeID, name, admin, tech)
     open_helper(False, False, True, window)
+
+
+# Helper function for buttons who need to delete an employee
+# and open a new window
+def delete_emp_and_open(employeeID, window):
+    delete_employee(employeeID)
+    open_helper(False, False, True, window)
+
+
+# Helper function for buttons who need to delete an issue
+# and open a new window
+def delete_iss_and_open(issueID, window):
+    delete_issue(issueID)
+    open_helper(False, True, False, window)
 
 
 # This opens the employee table view.
@@ -32,7 +48,7 @@ def open_employee_table():
 
     bottom_frame = tk.Frame(employeeWindow)
 
-    bottom_frame.grid(row=1, column=0)  # remove columnspan or set it to 1
+    bottom_frame.grid(row=1, column=0)
     spacer1 = tk.Label(bottom_frame, text="")
     spacer1.grid(column=2)
 
@@ -51,6 +67,10 @@ def open_employee_table():
             label1 = tk.Entry(bottom_frame, width=20)
             label1.grid(row=i + 3, column=j + 1)
             label1.insert(tk.END, table[i][j])
+            label1.configure(state='disabled')
+        button2 = tk.Button(bottom_frame, text='Delete', command=lambda x=i: delete_emp_and_open(table[x][0],
+                                                                                                 employeeWindow))
+        button2.grid(row=i + 3, column=j + 2)
 
     label2 = tk.Label(bottom_frame, text='ID:')
     label2.grid(row=15, column=1)
@@ -78,8 +98,8 @@ def open_employee_table():
     button2 = tk.Button(bottom_frame, text='Create New Employee', command=lambda: insert_and_open(
         idEntry.get(), nameEntry.get(), adminEntry.get(), techEntry.get(), employeeWindow
     ))
-
     button2.grid(row=20, column=4)
+
     employeeWindow.mainloop()
 
 
@@ -89,13 +109,57 @@ def open_employee_table():
 def open_issues_table():
     issuesWindow = tk.Tk()
     issuesWindow.title(" Issues Table ")
-    issuesWindow.geometry("600x400")
+    issuesWindow.geometry("1200x800")
 
-    canvas = tk.Canvas(issuesWindow, width=400, height=300)
-    canvas.pack()
+    listOfTechs = return_techs()
+    techNames = []
+    print(listOfTechs[0][1])
+    for i in listOfTechs:
+        techNames.append(i[1])
+
+    bottom_frame = tk.Frame(issuesWindow)
+
+    bottom_frame.grid(row=1, column=0)
+    spacer1 = tk.Label(bottom_frame, text="")
+    spacer1.grid(column=2)
+
+    nameText = tk.Label(bottom_frame, text="Name")
+    nameText.grid(row=2, column=1)
+    subjectText = tk.Label(bottom_frame, text="Subject")
+    subjectText.grid(row=2, column=2)
+    descText = tk.Label(bottom_frame, text="Description")
+    descText.grid(row=2, column=3)
+    urgText = tk.Label(bottom_frame, text="Urgency Level")
+    urgText.grid(row=2, column=4)
+    techText = tk.Label(bottom_frame, text="Assigned Tech")
+    techText.grid(row=2, column=5)
+    issueIDText = tk.Label(bottom_frame, text="Issue ID")
+    issueIDText.grid(row=2, column=6)
+
+    table = return_issues_admin()
+    for i in range(len(table)):
+        print(table[i][0])
+        for j in range(6):
+            if j != 4:
+                if j == 2:
+                    label1 = tk.Text(bottom_frame, width=30, height=3)
+                else:
+                    label1 = tk.Entry(bottom_frame, width=20)
+                label1.grid(row=i + 3, column=j + 1)
+                label1.insert(tk.END, table[i][j])
+                if j != 3:
+                    label1.configure(state='disabled')
+            else:
+                optionChosen = tk.StringVar(bottom_frame)
+                optionChosen.set("Select a tech")
+                combobox1 = tk.OptionMenu(bottom_frame, optionChosen, techNames)
+                combobox1.grid(row=i + 3, column=5)
+        button2 = tk.Button(bottom_frame, text='Delete', command=lambda x=i: delete_iss_and_open(table[x][5],
+                                                                                                 issuesWindow))
+        button2.grid(row=i + 3, column=j + 2)
 
     button1 = tk.Button(issuesWindow, text='Back', command=lambda: open_helper(True, False, False, issuesWindow))
-    canvas.create_window(200, 300, window=button1)
+    button1.grid(row=25, column=2)
 
     issuesWindow.mainloop()
 
@@ -111,10 +175,12 @@ def open_admin_view():
     canvas = tk.Canvas(window, width=400, height=300)
     canvas.pack()
 
-    button1 = tk.Button(window, text='Check Employees', command=lambda: open_helper(False, False, True, window))
-    canvas.create_window(170, 300, window=button1)
+    button1 = tk.Button(window, text='Check Employees', width=20, height=5,
+                        command=lambda: open_helper(False, False, True, window))
+    canvas.create_window(220, 100, window=button1)
 
-    button2 = tk.Button(window, text='Check Issues', command=lambda: open_helper(False, True, False, window))
-    canvas.create_window(270, 300, window=button2)
+    button2 = tk.Button(window, text='Check Issues', width=20, height=5,
+                        command=lambda: open_helper(False, True, False, window))
+    canvas.create_window(220, 250, window=button2)
 
     window.mainloop()

@@ -39,6 +39,9 @@ def test():
     insert_into_employees(123456, "Isaac", True, False)
     insert_into_employees(234567, "Micah", False, True)
     insert_into_employees(345678, "Derek", False, False)
+    insert_into_issues("Joe", "Help", "I need help")
+    insert_into_issues("Bob", "Fill", "help")
+    insert_into_issues("Ise", "pip", "pop")
 
 
 if __name__ == '__main__':
@@ -48,12 +51,14 @@ if __name__ == '__main__':
 
         create_tables()
         initialize_issue_number()
+        test()
     if os.stat(file_path).st_size == 0:
         print("Database does not contain any tables")
         from databaseManager import *
 
         initialize_issue_number()
         create_tables()
+        test()
     else:
         print("Database exists and has tables in it")
         from databaseManager import *

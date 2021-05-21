@@ -32,9 +32,8 @@ def create_tables():
     Name            STRING  NOT NULL,
     Subject         STRING  NOT NULL,
     Description     STRING  NOT NULL,
-    [Urgency Level] INTEGER,
+    UrgencyLevel    INTEGER,
     AssignedTech    STRING,
-    AssignedTechID  INTEGER,
     IssueID         INTEGER PRIMARY KEY
                             NOT NULL
                             UNIQUE
@@ -42,6 +41,24 @@ def create_tables():
 '''
     )
     print("Table Issues created successfully")
+
+
+# This function deletes an employee using an employee ID
+def delete_employee(employeeID):
+    ID = str(employeeID)
+    cur.execute('''DELETE FROM Employees
+                    WHERE EmployeeID=?''', (ID,))
+    print('Deleting Employee: ' + ID)
+    conn.commit()
+
+
+# This function deletes an issue using an issue ID
+def delete_issue(issueID):
+    ID = str(issueID)
+    cur.execute('''DELETE FROM Issues
+                    WHERE IssueID=?''', (ID,))
+    print('Deleting Issue #' + ID)
+    conn.commit()
 
 
 # This function returns all employees and their info as a list of tuples
@@ -55,6 +72,42 @@ def return_employees():
 
     print(listData)
     print(len(listData))
+    return listData
+
+
+# This function returns all techs.
+def return_techs():
+    data = cur.execute('''Select EmployeeID, EmployeeName
+                            FROM Employees
+                            WHERE Tech=1''')
+    listData = []
+    for row in data:
+        listData.append(row)
+
+    return listData
+
+
+# This function returns all issues and their info as a list of tuples
+def return_issues_admin():
+    data = cur.execute('''Select * FROM Issues''')
+
+    listData = []
+    for row in data:
+        print(row)
+        listData.append(row)
+
+    return listData
+
+
+# This function returns all issues that have an urgency level assigned by
+# an admin
+def return_issues_tech():
+    data = cur.execute('''Select * FROM Issues
+                            WHERE UrgencyLevel IS NOT NULL''')
+    listData = []
+    for row in data:
+        listData.append(row)
+
     return listData
 
 
@@ -112,10 +165,19 @@ def insert_into_employees(employeeID, employeeName, admin, tech):
 # This functions allows the insertion of issues into the issues table.
 def insert_into_issues(name, subject, description):
     global issueNumber
-    sql = '''INSERT INTO Issues (Name, Subject, Description, IssueID)
-                 VALUES (?, ?, ?, ?) '''
-    package = (name, subject, description, issueNumber)
-    issueNumber += 1
+    cur.execute('''SELECT max(IssueID)
+                    FROM Issues''')
+    row = cur.fetchone()
+    print(row)
+    if row[0] is None:
+        print('row is None')
+        issueNumber = 1
+    else:
+        issueNumber = row[0] + 1
+    sql = '''INSERT INTO Issues (Name, Subject, Description, UrgencyLevel, 
+                                AssignedTech, IssueID)
+                                VALUES (?, ?, ?, ?, ?, ?) '''
+    package = (name, subject, description, 0, "", issueNumber)
     print(issueNumber)
     cur.execute(sql, package)
     conn.commit()
