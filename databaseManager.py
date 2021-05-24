@@ -43,6 +43,20 @@ def create_tables():
     print("Table Issues created successfully")
 
 
+# This function updates the Issues table
+def update_issues(name, subject, description, urgencyLevel, assignedTech, issueID):
+    print(type(assignedTech))
+    print(name + " " + subject + " " + description + " " + str(urgencyLevel) + " " + assignedTech + " " + str(issueID))
+    cur.execute('''UPDATE Issues
+                    SET Name=?, Subject=?, Description=?, UrgencyLevel=?,
+                    AssignedTech=?, IssueID=?
+                    WHERE issueID=?''',
+                (name, subject, description, urgencyLevel,
+                 assignedTech, issueID,
+                 issueID))
+    conn.commit()
+
+
 # This function deletes an employee using an employee ID
 def delete_employee(employeeID):
     ID = str(employeeID)

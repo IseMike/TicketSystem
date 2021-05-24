@@ -3,6 +3,7 @@ from databaseManager import *
 
 left_padding = 0
 right_padding = 0
+tech = "Select a tech"
 
 
 # This is a helper function for the other open functions
@@ -148,20 +149,32 @@ def open_issues_table():
                 label1.grid(row=i + 3, column=j + 1)
                 label1.insert(tk.END, table[i][j])
                 if j != 3:
+                    urgencyLabel = label1
                     label1.configure(state='disabled')
             else:
                 optionChosen = tk.StringVar(bottom_frame)
                 optionChosen.set("Select a tech")
-                combobox1 = tk.OptionMenu(bottom_frame, optionChosen, techNames)
+                combobox1 = tk.OptionMenu(bottom_frame, optionChosen, techNames, command=callback)
                 combobox1.grid(row=i + 3, column=5)
         button2 = tk.Button(bottom_frame, text='Delete', command=lambda x=i: delete_iss_and_open(table[x][5],
                                                                                                  issuesWindow))
         button2.grid(row=i + 3, column=j + 2)
+        button3 = tk.Button(bottom_frame, text='Update', command=lambda x=i: update_issues(table[x][0], table[x][1],
+                                                                                           table[x][2],
+                                                                                           urgencyLabel.get(), tech[0],
+                                                                                           table[x][5]))
+        button3.grid(row=i + 3, column=j + 3)
 
     button1 = tk.Button(issuesWindow, text='Back', command=lambda: open_helper(True, False, False, issuesWindow))
     button1.grid(row=25, column=2)
 
     issuesWindow.mainloop()
+
+
+def callback(selection):
+    global tech
+    print(selection)
+    tech = selection
 
 
 # This opens the admin main menu.
