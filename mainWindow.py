@@ -1,5 +1,6 @@
 from employeeView import *
 from adminView import *
+from techView import *
 import os.path
 
 file_path = 'ticketsystem.db'
@@ -22,6 +23,7 @@ def open_new_window(ID):
         tech = True
         mainWindow.destroy()
         print("This is a Tech")
+        open_tech_view(ID)
     if is_employee(ID) and not tech and not admin:
         employee = True
         mainWindow.destroy()

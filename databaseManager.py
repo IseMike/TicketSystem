@@ -18,12 +18,12 @@ def initialize_issue_number():
 def create_tables():
     conn.execute(
         '''CREATE TABLE Employees (
-        EmployeeID       INTEGER(6) PRIMARY KEY
+    EmployeeID       INTEGER(6) PRIMARY KEY
                                  UNIQUE
                                  NOT NULL,
-        EmployeeName     STRING  NOT NULL,
-        Admin            BOOLEAN NOT NULL,
-        Tech             BOOLEAN NOT NULL
+    EmployeeName     STRING  NOT NULL,
+    Admin            BOOLEAN NOT NULL,
+    Tech             BOOLEAN NOT NULL
     );''')
     print("Table Employee created successfully")
 
@@ -37,10 +37,21 @@ def create_tables():
     IssueID         INTEGER PRIMARY KEY
                             NOT NULL
                             UNIQUE
-);
-'''
-    )
+    );''')
     print("Table Issues created successfully")
+
+    conn.execute(
+        '''CREATE TABLE CompletedIssues (
+    Name            STRING  NOT NULL,
+    Subject         STRING  NOT NULL,
+    Description     STRING  NOT NULL,
+    UrgencyLevel    INTEGER,
+    AssignedTech    STRING,
+    IssueID         INTEGER PRIMARY KEY
+                            NOT NULL
+                            UNIQUE
+    );''')
+    print("Table CompletedIssues created successfully")
 
 
 # This function updates the Issues table
@@ -113,11 +124,32 @@ def return_issues_admin():
     return listData
 
 
+# This function returns all completed issues and their info as a list of tuples
+def return_completed_admin():
+    data = cur.execute('''Select * FROM CompletedIssues''')
+    listData = []
+    for row in data:
+        print(row)
+        listData.append(row)
+    return listData
+
+
+# This function given an employees ID returns the employees name
+def return_employee_name(employeeID):
+    print('This is the employeeID: ' + employeeID)
+    cur.execute('''Select EmployeeName FROM Employees
+                    WHERE EmployeeID=?''', (employeeID,))
+    return cur.fetchone()
+
+
 # This function returns all issues that have an urgency level assigned by
-# an admin
-def return_issues_tech():
-    data = cur.execute('''Select * FROM Issues
-                            WHERE UrgencyLevel IS NOT NULL''')
+# an admin and are assigned to a specified tech
+def return_issues_tech(techID):
+    techName = return_employee_name(techID)
+    data = cur.execute('''Select Name, Subject, Description, UrgencyLevel, IssueID 
+                            FROM Issues
+                            WHERE UrgencyLevel!=0
+                            AND AssignedTech=?''', techName)
     listData = []
     for row in data:
         listData.append(row)
@@ -188,14 +220,24 @@ def insert_into_issues(name, subject, description):
         issueNumber = 1
     else:
         issueNumber = row[0] + 1
-    sql = '''INSERT INTO Issues (Name, Subject, Description, UrgencyLevel, 
-                                AssignedTech, IssueID)
+    sql = '''INSERT INTO Issues (Name, Subject, Description, UrgencyLevel, AssignedTech, IssueID)
                                 VALUES (?, ?, ?, ?, ?, ?) '''
     package = (name, subject, description, 0, "", issueNumber)
     print(issueNumber)
     cur.execute(sql, package)
     conn.commit()
     print("Inserted issue into issue table.")
+
+
+# This function allows the insertion of issues into the completed issues table
+def insert_into_completed(name, subject, description, urgencyLevel, assignedTech, issueID):
+    package = (name, subject, description, urgencyLevel, assignedTech, issueID)
+    print(package)
+    cur.execute('''INSERT INTO CompletedIssues (Name, Subject, Description, UrgencyLevel, AssignedTech, IssueID)
+                                                VALUES(?, ?, ?, ?, ?, ?)''', (name, subject, description,
+                                                                              urgencyLevel, assignedTech, issueID))
+    conn.commit()
+    print("Insert issue into completed issue table")
 
 
 # This function closes the database.
